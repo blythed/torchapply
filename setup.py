@@ -10,7 +10,7 @@ with open(ver_path) as ver_file:
     exec(ver_file.read(), versions)
 
 with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read().split('\n')
+    long_description = fh.read()
 
 
 def parse_requirements(filename):
@@ -22,7 +22,7 @@ setuptools.setup(
     name="torchapply",
     version=versions['__version__'],
     author="Duncan Blythe",
-    author_email="<firstname><lastname>@gmail.com",
+    author_email="firstnamelastname@gmail.com",
     description="Apply a torch model to a single or multiple datapoints.",
     long_description=long_description,
     long_description_content_type="text/markdown",

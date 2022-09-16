@@ -93,6 +93,7 @@ def apply_model(model, args, single=True, verbose=False, **kwargs):
         prepared = model.preprocess(args)
         singleton_batch = create_batch(prepared)
         output = model.forward(singleton_batch)
+        output = unpack_batch(output)[0]
         if hasattr(model, 'postprocess'):
             return model.postprocess(output)
         return output
